@@ -1,0 +1,48 @@
+A Log4J egy Java naplózási könyvtár, ami egyszerűvé és gyorssá teszi a naplózási folyamatot, 
+ezért a Java fejlesztők előszeretettel alkalmazzák projektekben.
+
+2021 ben “találtak” (nem tudni hogy ezt megelőzően mióta használhatták ki ezt a hibát a hekkerek) egy olyan hibát a rendszerben, 
+amit lehetővé tette, hogy egy támadó gyakorlatilag teljes uralmat nyerjen bármilyen érintett számítógép felett, 
+mivel a hibát kihasználva bármilyen, a támadó által írt kódot lefutatta az érintett számítógép mindenféle ellenőrzés 
+és figyelmeztetés nélkül. Ezt hívjuk Remote Code Execution-nek (RCE), vagy távoli kódvégrehajtásnak.
+
+A hibának az alapját egy 2013-as frissítésben helyezték el a Log4J könyvtárban, ami egy olyan funkciót implementált, 
+hogy egy JNDI (Java Naming and Discovery Interface) API URL-en keresztül lehessen behelyettesíteni értékeket a naplózott szövegbe, 
+ami rekurzív híváson keresztül hajtja ezt végre.
+
+A probléma forrása, hogy a JNDI-on keresztül elérhető adat akár egy teljes Java objektum is lehet, 
+mely tartalmazhatja a rosszindulatú programot. Egyszerű példa egy támadás módszerére, hogy egy kereső mező tartalmát naplózzuk, 
+amibe a támadó egy saját JNDI URL-t helyez, így egy saját szerveren lévő rosszindulatú programot kéret le a kiszolgálóval.
+Hasonló az SQL injection-höz.
+
+Egy JNDI hívás úgy épül fel, hogy az eddig összeállított napló üzenetet egy “${jndi:ladp://…}” híváson keresztül továbbít a szervernek, 
+ahol behelyettesíti a kért objektumot. Mivel ez teszi lehetővé a támadásokat, 
+nem teljesen igazságos teljes mértékben a Log4J-t hibáztatni, 
+mivel a JNDI rendszer objektum átadása adja meg a lehetőséget a külső kód beférkőzésére.
+
+A könyvtár népszerűségének köszönhetően rendkívül veszélyes a hiba, 
+mivel nem csak akkor sebezhető egy rendszer, ha explicit módon használjuk a Log4J-t a programban, 
+hanem ha bármely általunk használt csomag, vagy azoknak bármelyik függősége használja azt, 
+amit felmérések szerint az esetek több mint 60%-át jelenti.
+
+Megelőzési módszer lehet például a jndi egyik jvm flag-je, Dcom.sun.jndi.ldap.object.trustURLCodebase=true alkalmazásával, 
+viszont ez nem akadályozza meg az olyan támadást, ami a támadó szerverére továbbíthat a kiszolgálón tárolt környezeti változót, 
+mivel ezeket is lehet helyettesíteni env:ACCESS_KEY módon.
+
+Mivel a 2.16-os verziót követően ez a probléma ki lett javítva, 
+például a Gradle rendszeren keresztül a “dependency constraint”-et alkalmazva specifikus verzitót megadva lehet 
+kényszeríteni a biztonságos verzió használatát.
+
+A probléma elterjedtsége kérdéseket vetett fel a nyílt forráskódú rendszerekkel szemben, 
+mivel eddig az általános konszenzus szerint a nyílt forráskódú rendszerek biztonságosabbak, több szem többet lát alapon.
+
+
+
+
+Mivel ez egy ingyenes, szabadidőben fejlesztett projekt, mint a legtöbb nyílt forráskódú eszköz, 
+a hiba súlyossága ellenére nem teljesen igazságos a gyors javítás elvárása, mivel a fejlesztők nem fizetett, 
+nem teljes munkaidőben foglalkoznak a projekttel, nem biztosított a javítás sebessége.
+
+Egyéb olyan kérdéseket vetett fel a probléma megjelenése, hogy az ipar teljességének modernebb, 
+jobb megoldások irányába kell mozdulnia, és hogy nem előnyös régi projektek az eredetileg tervezett életciklusukat 
+szignifikánsan túllépve karbantartani, használni.

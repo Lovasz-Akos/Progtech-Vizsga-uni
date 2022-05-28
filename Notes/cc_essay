@@ -1,0 +1,35 @@
+A kód komplexitásának mérésére több lehetőségünk is van, 
+melyek alkalmazásával értékes információkat nyerhetünk projektekről, 
+például ha bizonyos részek túlkomplikáltak, vagy nem fenntarthatóak.
+
+Ciklomatikus komplexitás:
+1976-ban Thomas McCabe által fejlesztett módszer, 
+a lineárisan független ágakat méri a program forráskódjában, 
+a program vezérlési folyamat grafikonja által lehet kiszámítani. 
+Ez a metódus az egymásba ágyazott feltételeket méri, mint például az if else, 
+for, és switch elágazásokat. A végeredmény a programban az összes lefutó útvonal összege 
+(E – N + 2 * P, ahol E az élek száma, N a csomópontok száma és a P az olyan csomópontok száma, melynek van kilépési pontja).
+
+Forráskód sorainak száma
+A legegyszerűbb mérési mód, tisztán a forráskód sorainak számát számolja, beleszámítva az üres sorokat és a kommenteket is.
+
+Lines of Executable Code
+A forráskód azon sorainak megszámolása, melyek valós futó kódot eredményeznek, azaz nem számítanak bele az üres sorok, 
+kommentek és nem használt elágazások.
+
+Öröklődés mélysége
+Azt méri, hogy egy osztály vagy metódus mennyire milyen mértékben függ másoktól a kódbázis összes többi részéhez képest.
+
+Karbantarthatósági index
+Az előző négy módszer kombinációjának egy kiértékelése, ami mutatót ad a kód karbantarthatóságára.
+
+Kognitív Komplexitás
+Azt méri, hogy milyen nehéz a kód folyamatának követhetősége, megérthetősége. Hasonló a Ciklomatikus komplexitáshoz, 
+viszont nem nő az értéke logikai operátort alkalmazó if-ekkel, csak switch case-ekkel és egymásba ágyazott folyamattörésekkel.
+
+Halstead Volume
+A kódban lévő információt méri. Megszámolja a változókat, és hogy milyen sűrűn jelennek meg.
+
+Rework Ratio
+Annak a nemrég írt kódnak a százalék értéke, ami már újraírás alatt van, esetleg azonnali javításra szorult. 
+Ez nem egy direkt módja a komplexitás mérésének, viszont jelezheti egyes kódrészek túlkomplikáltságát, amire oda kell figyelni.

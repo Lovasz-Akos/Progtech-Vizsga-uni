@@ -1,0 +1,5 @@
+- It's obnoxiously "fool-proof" or something similar, fair to say it assumes the reader is an avid fan of bad code
+- Has quite a few instances of duplication, such as chapter 3 and 12's mentions and guidelines for duplication...ironic
+- Ch. 14 is a nice walkthrough of a good code cleanup pass
+- I feel weird about chapters 15 and 16, which seems partially useless, since it leans more into self-praise for "cleaning up" or refactoring existing open-source libraries, based on the writer's own set of rules, disregarding the original ones rather than presenting interesting or useful principles
+- Chapter 17 is the best chapter in the book, and it stums up most of the good practices the book is written about. If you don't read it as a requirement for progtech (a course at my uni that requires this book), and you are short on time, just reach ch.17

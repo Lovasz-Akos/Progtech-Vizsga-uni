@@ -1,0 +1,32 @@
+Tipikusan a legnagyobb tanácsadó cégektől származnak a legrosszabb minőségű munkák, 
+mert a módszertanok, amiket ezek a cégek alkalmaznak azért kerültek egyáltalán használatba, 
+hogy a cég növekedésével ,,konzisztens’’ legyen az alkalmazottak által előállított munka. 
+Ezzel a hozzáállással az a probléma, hogy ennek az eléréséhez pontos, 
+elemi lépésekre bontható előírásokkal kell az új alkalmazottakat tanítani, 
+ami teljesen elnyomja a tehetségek kibontakozásának lehetőségét.
+
+A Joen on Software - ,,Big Macs vs. The Naked Chef’’ cikkben a McDonalds 
+és egy ínyenc séf metódusait összehasonlítva szembetűnővé válik, hogy egy cég túlzott növekedése során elkerülhetetlen, 
+hogy kompromisszumokat kell kötni a munka színvonalának tartása érdekében, viszont ez szinte sosem valósul meg, a színvonal romlik, 
+a fenntarthatóság érdekében.
+
+Egy cég két irányba mehet: folyamatos növekedés hatására középszerűségbe esik, hogy minél több munkát tudjon vállalni, 
+vagy megtartja a kreativitást és a tehetséget, de ezzel a profitálhatóság egy felső küszöbét megtartva.
+
+Joshua Kerievsky 2016-os Agile előadásában egyértelműen kijelentette, hogy a Scrum egy elavult módszertan, már nem felel meg a célnak. 
+Általában sok erőforrás fordul arra, hogy a sprint terv elején ígért elemek befejezésre kerüljenek, 
+folyamatosan következő sprintre tolódnak, vagy elkapkodott, hibás terméket adnak le, csak hogy késznek nyilváníthassák. 
+A Scrum egykor kielégítette az igényeket, de már vannak újabb, jobb megoldások, akár a Scrum modernizálása, újraértelmezése által.
+
+Egy Stack Overflow blog felsorol néhány olyan Scrum elemet, melyek általános panaszként jelenik meg a fejlesztők között. 
+A túlzott fókusz a ,,kész’’ állapot elérése sokszor elsietett, rossz megoldásokra vezet, 
+a standup meetingek csakis a vezetőség irányába való képmutatás a haladásról, hogy nem támogatja a csapatmunkát, 
+inkább az egyéni fejlesztésre fókuszál, a tiszta kód helyett az új funkciók implementálása a lényeg,
+a komplikáltabb feladatok kisebb fontosságot nyernek, mivel azok megoldása nem olyan látványos haladást eredményez.
+
+Sokan vallják, hogy a Scrum teljesen a képmutatás és a haladás illúziójának felállítására vezeti a fejlesztői csapatokat, 
+visszafogja a jó minőségű fejlesztés lehetőségét.
+
+A Kanban lehetővé teszi a munka folyamatának vizualizálását, a Scrum-al ellentétben nem fix hosszú sprintekből álló munkát, 
+hanem folyamatos munkára ad lehetőséget. Nem igényel kiemelt szerepeket a csapatban, nincs szükség például kijelölt Scrum mesterre. 
+A Kanban a folyamatos munka mellett lehetőséget ad a visszajelzés alapú célok gyors és zökkenőmentes beépítésére a munkafolyamatba.
